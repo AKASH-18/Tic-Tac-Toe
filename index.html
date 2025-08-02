@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic-Tac-Toe</title>
+  </head>
+
+  <body>
+    <h1>Tic Tac Toe</h1>
+
+    <form id="playerForm" class="settings">
+      <label for="playerXName">Player 1 Name:</label>
+      <input
+        type="text"
+        id="playerXName"
+        placeholder="Player 1"
+        maxlength="15"
+      />
+      <label for="playerOName">Player 2 Name (or AI):</label>
+      <input
+        type="text"
+        id="playerOName"
+        placeholder="Player 2 or AI"
+        maxlength="15"
+      />
+
+      <label for="playerSymbol">Player 1 Symbol:</label>
+      <select id="playerSybmol">
+        <option value="X" selected>X</option>
+        <option value="O">O</option>
+      </select>
+      <label for="gameMode">Game Mode:</label>
+      <select id="gameMode">
+        <option value="friend" selected>Play with Friend</option>
+        <option value="ai">Play vs AI</option>
+      </select>
+
+      <label for="aiDifficulty">AI Difficulty:</label>
+      <select id="aiDifficulty" disabled>
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+      </select>
+
+      <button type="submit">Start / Reset Game</button>
+    </form>
+
+    <div class="message" id="message"></div>
+
+    <div class="board" id="board"></div>
+
+    <div class="scores">
+      <div id="scoreXLabel">Player 1 (X):</div>
+      <div id="scoreX">0</div>
+      <div id="scoreOLabel">Player 2 (O):</div>
+      <div id="scoreO">0</div>
+      <div>Draws:</div>
+      <div id="scoreD">0</div>
+    </div>
+    <button id="restartBtn" disabled>New Round</button>
+    <button id="resetAllBtn">Reset Scores</button>
+
+    <audio
+      id="soundPlace"
+      src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"
+    ></audio>
+    <audio
+      id="soundWin"
+      src="https://actions.google.com/sounds/v1/cartoon/concussive_hit_guitar_boing.ogg"
+    ></audio>
+    <audio
+      id="soundDraw"
+      src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"
+    ></audio>
+    <script src="app.js"></script>
+  </body>
+</html>
